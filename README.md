@@ -1,6 +1,6 @@
 # Closet.exe
 
-A retro, 90s-computer digital closet. Browse outfits on an illustrated paper doll, pull looks from a lookbook, and ask the stylist to dress you for a plan like "fall in the Hudson Valley" or "rainy day chic."
+A retro, 90s-computer digital closet inspired by Cher's iconic closet from the movie Clueless. Browse outfits on an illustrated paper doll, pull looks from a lookbook, and ask the stylist to dress you for a plan like "brunch with the girls in the west village" or "rainy day chic."
 
 ## Features
 
