@@ -91,6 +91,40 @@ legend{font-weight:600;padding:0 6px;font-size:11.5px;text-transform:uppercase;l
 .upl input{position:absolute;opacity:0;width:1px;height:1px}
 .status{display:flex;justify-content:space-between;gap:8px;padding:4px 10px;border-top:2px solid var(--lo);font-size:11.5px;color:var(--muted);flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.blink{animation:none}}
+
+/* Midterm research layer — extends, never replaces, original visual artwork */
+.thesis-banner{padding:21px 22px 18px;border-bottom:2px solid var(--ink);background:linear-gradient(110deg,#fce6f3,#efe5ff 54%,#dfffad);display:grid;grid-template-columns:1.3fr .7fr;gap:18px}
+.thesis-banner .tiny,.research .tiny{font:600 10px "IBM Plex Mono",monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--title-a)}
+.thesis-banner h2{font:normal clamp(31px,4vw,53px)/.94 "VT323",monospace;margin:6px 0 7px;letter-spacing:.025em}
+.thesis-banner p{font-size:12px;line-height:1.7;max-width:650px;margin:0}
+.thesis-note{align-self:center;border:1px dashed #745799;padding:13px;font-size:11px;line-height:1.6;background:#ffffffa8}
+.research{margin:16px;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);background:#fff9fd}
+.research-top{background:var(--screen);color:var(--screen-ink);padding:8px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;font:17px "VT323",monospace}
+.research-top em{font:10px "IBM Plex Mono",monospace;font-style:normal;color:#fff}
+.research-inner{padding:16px}
+.research-intro{font-size:12px;line-height:1.7;max-width:850px;margin:0 0 16px}
+.research-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:14px}
+.research-pane{border:2px solid #afa0c6;background:#f2ecfc;padding:14px;min-width:0}
+.research-pane h3{font:normal 25px "VT323",monospace;margin:0 0 8px}
+.research-pane label{display:block;font-size:11px;font-weight:600;margin:12px 0 5px}
+.research-pane input,.research-pane textarea{display:block;width:100%;min-width:0;border:2px inset #b1a3c7;background:#fff;padding:9px;font:12px/1.5 "IBM Plex Mono",monospace;color:var(--ink)}
+.research-pane textarea{resize:vertical;min-height:90px}
+.archive-buttons{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.archive-buttons button{border:2px solid var(--ink);background:var(--lime);box-shadow:2px 2px 0 var(--ink);padding:7px 11px;font-size:11px}
+.archive-buttons .quiet{background:var(--win)}
+.r-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.r-card{border:2px solid var(--ink);background:#e8e1f9;min-height:185px;padding:12px;overflow-wrap:anywhere}
+.r-card.human{background:#ffe5ee}
+.r-card h4{font:normal 24px "VT323",monospace;margin:0 0 10px}
+.r-card p{font-size:12px;line-height:1.7;white-space:pre-wrap}
+.r-kicker{font:10px "IBM Plex Mono",monospace;letter-spacing:.1em}
+#archiveInsight{font-size:11px;line-height:1.7;background:#e2ffc0;border:1px dashed #55732d;padding:9px;margin-top:10px}
+#archiveList{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.archive-entry{background:#f8f1fc!important;border:1px solid var(--ink)!important;box-shadow:none!important;font-size:11px!important}
+.method-line{border-top:1px dashed var(--lo);margin-top:16px;padding-top:11px;font-size:10px;line-height:1.7;color:var(--muted)}
+.research .hint{color:var(--muted);font-size:10px;line-height:1.6;margin-top:7px}
+@media(max-width:760px){.thesis-banner,.research-grid,.r-two{grid-template-columns:1fr}.thesis-banner{padding:16px}.research{margin:12px}.research-inner{padding:12px}}
+
 </style>
 
 </head>
@@ -100,6 +134,7 @@ legend{font-weight:600;padding:0 6px;font-size:11.5px;text-transform:uppercase;l
 <div class="win">
   <div class="bar"><h1>CLOSET.EXE</h1><div class="dots" aria-hidden="true"><span>_</span><span>□</span><span>×</span></div></div>
   <div class="menu"><span><b>F</b>ile</span><span><b>W</b>ardrobe</span><span><b>L</b>ookbook</span><span><b>S</b>tylist</span><span><b>H</b>elp</span></div>
+<section class="thesis-banner" aria-label="Research framing"><div><div class="tiny">Parsons DT · Midterm prototype / October 2026</div><h2>THE THINGS WE KEEP_</h2><p>CLOSET.EXE began as a digital dressing room. Now it asks a different question: <strong>what can a system infer from an outfit, and what can only its wearer tell us?</strong> Dress the illustrated figure, then open the counter-archive below to give one garment its own story.</p></div><aside class="thesis-note"><strong>RESEARCH PROMPT_</strong><br>Can personal style be understood through categories, trends and compatibility scores alone?<br><br>01 / Dress the figure<br>02 / Describe a garment<br>03 / Compare two readings<br>04 / Preserve a memory</aside></section>
   <div class="body">
     <div class="stage sunk">
       <div class="screen-top"><span id="lookname">&gt; DRESSING ROOM</span><span class="blink">■ REC</span></div>
@@ -117,7 +152,7 @@ legend{font-weight:600;padding:0 6px;font-size:11.5px;text-transform:uppercase;l
 
     <div class="side">
       <fieldset>
-        <legend>Stylist</legend>
+        <legend>Algorithmic styling / existing prototype</legend>
         <form class="ask" id="askform">
           <input id="prompt" autocomplete="off" placeholder="Where are you going? e.g. rainy day chic" aria-label="Describe the occasion">
           <button class="btn primary raised" id="go" type="submit">Style me</button>
@@ -128,7 +163,7 @@ legend{font-weight:600;padding:0 6px;font-size:11.5px;text-transform:uppercase;l
       </fieldset>
 
       <fieldset>
-        <legend>Match check</legend>
+        <legend>Compatibility score / what counts?</legend>
         <div class="meter" id="meter" aria-hidden="true"></div>
         <p class="vtitle" id="vtitle"></p>
         <p class="vwhy" id="vtext"></p>
@@ -136,7 +171,7 @@ legend{font-weight:600;padding:0 6px;font-size:11.5px;text-transform:uppercase;l
       </fieldset>
 
       <fieldset>
-        <legend>Shop the look</legend>
+        <legend>Market view / shop the look</legend>
         <div class="list" id="shop"></div>
       </fieldset>
 
@@ -154,6 +189,17 @@ legend{font-weight:600;padding:0 6px;font-size:11.5px;text-transform:uppercase;l
       </fieldset>
     </div>
   </div>
+<section class="research" id="counterArchive" aria-label="Counter archive garment memory research">
+<div class="research-top"><span>▣ COUNTER_ARCHIVE.EXE</span><em>PERSONAL STYLE ≠ PRODUCT DATA</em></div>
+<div class="research-inner">
+<p class="research-intro">The dressing room above arranges garments as visual options. This second interface deliberately interrupts shopping logic. Give one real garment a history, then compare the searchable tags a catalog might assign with what its owner knows. <strong>Neither reading is an AI diagnosis of you.</strong></p>
+<div class="research-grid">
+<div class="research-pane"><h3>01 / Object testimony</h3><label for="archiveGarment">NAME ONE GARMENT YOU OWN</label><input id="archiveGarment" maxlength="90" placeholder="e.g. my father's leather jacket" autocomplete="off">
+<label for="archiveType">HOW A CATALOG MIGHT LABEL IT</label><select id="archiveType" style="width:100%;padding:9px;background:#fff;border:2px inset #b1a3c7;font:12px 'IBM Plex Mono',monospace"><option value="outerwear">Outerwear</option><option value="top">Top</option><option value="bottom">Bottom</option><option value="dress">Dress</option><option value="footwear">Footwear</option><option value="accessory">Accessory</option></select>
+<label for="archiveMemory">WHAT DOES THIS GARMENT HOLD THAT A PRODUCT TAG CANNOT?</label><textarea id="archiveMemory" placeholder="A memory, a person, a place, a feeling, or a contradiction. Write in your own words."></textarea>
+<div class="archive-buttons"><button id="compareArchive" type="button">COMPARE READINGS ↗</button><button id="saveArchive" class="quiet" type="button">SAVE TO ARCHIVE +</button><button id="exportArchive" class="quiet" type="button">EXPORT .TXT ↓</button></div><p class="hint" id="archiveFeedback" role="status">Try an item you have kept even if you rarely wear it.</p></div>
+<div class="research-pane"><h3>02 / Two ways of knowing</h3><div class="r-two"><div class="r-card"><div class="r-kicker">[ SYSTEM / CATALOG VIEW ]</div><h4>Classifiable</h4><p id="catalogReading">OBJECT: —<br>CATEGORY: —<br>UTILITY: discover / compare / recommend</p></div><div class="r-card human"><div class="r-kicker">[ WEARER / LIVED VIEW ]</div><h4>Unsearchable</h4><p id="humanReading">The same object can carry a private history that a visual classification cannot see.</p></div></div><div id="archiveInsight">THE GAP_ A recommendation can tell you what resembles an item. It cannot tell you why you have kept it.</div><div class="tiny" style="margin-top:14px">Saved testimonies / this browser only</div><div id="archiveList" aria-live="polite"><span class="hint">No testimonies saved yet.</span></div></div></div>
+<div class="method-line"><strong>DESIGN POSITION:</strong> This is a critical interface and research instrument, not an AI stylist or a claim that algorithms literally understand emotion. Catalog output is an intentionally limited, authored taxonomy. Test next with 5 consenting people and a garment they choose to discuss; compare their own descriptions with typical e-commerce metadata. Participation is voluntary. Text stays locally in this browser unless exported.</div></div></section>
   <div class="status"><span id="count"></span><span>◀ ▶ or arrow keys to browse · ▲ ▼ to pick a slot</span></div>
 </div>
 
@@ -712,5 +758,25 @@ $("#upl").querySelectorAll("input").forEach(inp=>inp.onchange=()=>{
 texDefs();renderBook();render();
 </script>
 
+<script>
+(()=>{
+"use strict";
+const $=id=>document.getElementById(id), KEY="closet-exe-counter-archive-v1";
+const category={outerwear:["Layer","Seasonal wear"],top:["Upper body","Everyday wear"],bottom:["Lower body","Everyday wear"],dress:["One-piece","Occasion wear"],footwear:["Footwear","Movement"],accessory:["Accessory","Styling detail"]};
+function getData(){try{return JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){return []}}
+function renderSaved(){const root=$("archiveList");root.replaceChildren();const data=getData();if(!data.length){const p=document.createElement("span");p.className="hint";p.textContent="No testimonies saved yet.";root.append(p);return}data.forEach((d,i)=>{const b=document.createElement("button");b.type="button";b.className="archive-entry";b.textContent=String(i+1).padStart(2,"0")+" / "+d.garment;b.title="Revisit this testimony";b.addEventListener("click",()=>{$("archiveGarment").value=d.garment;$("archiveType").value=d.type;$("archiveMemory").value=d.memory;compare()});root.append(b)})}
+function values(){return{garment:$("archiveGarment").value.trim(),type:$("archiveType").value,memory:$("archiveMemory").value.trim()}}
+function compare(){const v=values();if(!v.garment){$("archiveFeedback").textContent="Name a garment first to begin.";return false}
+const meta=category[v.type]||category.accessory;
+$("catalogReading").textContent="OBJECT: "+v.garment.toUpperCase()+"\nCATEGORY: "+v.type.toUpperCase()+"\nINDEX: "+meta.join(" / ")+"\nFUNCTION: searchable, comparable, recommendable";
+$("humanReading").textContent=v.memory||"No story entered. Without the wearer's testimony, the system has no access to personal significance.";
+$("archiveInsight").textContent=v.memory?"THE GAP_ The left reading sorts an object into a market category. The right reveals a human relationship to that object. Which one would an outfit recommendation overlook?":"THE GAP_ The catalog can describe product function, but only the wearer can provide personal meaning.";
+$("archiveFeedback").textContent="Two perspectives, not a prediction. Revise the story and compare again.";return true}
+$("compareArchive").addEventListener("click",compare);
+$("saveArchive").addEventListener("click",()=>{const v=values();if(!v.garment||!v.memory){$("archiveFeedback").textContent="Add both a garment and its personal story before saving.";return}const data=getData();data.unshift({...v,savedAt:new Date().toISOString()});try{localStorage.setItem(KEY,JSON.stringify(data.slice(0,20)));$("archiveFeedback").textContent="Saved locally. Click a testimony below to revisit it.";renderSaved();compare()}catch(e){$("archiveFeedback").textContent="Browser storage is unavailable. Use Export instead."}});
+$("exportArchive").addEventListener("click",()=>{const v=values();if(!v.garment){$("archiveFeedback").textContent="Name a garment before exporting.";return}const out=["CLOSET.EXE / COUNTER ARCHIVE","Garment: "+v.garment,"Catalog category: "+v.type,"Personal testimony: "+(v.memory||"[not given]"),"Research question: What can a catalog classify, and what does it fail to know?"].join("\n");const url=URL.createObjectURL(new Blob([out],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download="closet-exe-testimony.txt";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+renderSaved();
+})();
+</script>
 </body>
 </html>
